@@ -1,188 +1,33 @@
+<!DOCTYPE html>
 <html>
 <head>
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    <style>
+        .circle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid;
+            border-image: linear-gradient(to bottom, #ffcc00, #ff9900);
+            border-image-slice: 1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: gradient-animation 2s linear infinite;
+        }
 
-.menu {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #663333;
-  height: 50px;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.menu a:hover {
-  background-color: #E56A37;
-}
-
-.banner {
-  width: 100%;
-  height: 300px;
-}
-
-.slide {
-  display: none;
-}
-
-.slide img {
-  width: 100%;
-  height: 300px;
-}
-
-.active {
-  display: block;
-}
-
-.secao {
-  width: 33.33%;
-  float: left;
-  padding: 20px;
-}
-
-.secao h3 {
-  text-align: center;
-}
-
-.formulario {
-  clear: both;
-  background-color: #f0f0f0;
-  padding: 20px;
-}
-
-.formulario input, .formulario textarea {
-  width: 30%;
-  margin: 10px auto;
-  display: block;
-}
-
-.formulario button {
-  width: 20%;
-  margin: 10px auto;
-  display: block;
-}
-
-.rodape {
-  background-color: #333;
-  color: white;
-  text-align: center;
-}
-</style>
+        @keyframes gradient-animation {
+            0% {
+                border-image: linear-gradient(to bottom, #ffcc00, #ff9900);
+            }
+            50% {
+                border-image: linear-gradient(to bottom, #ff9900, #000000);
+            }
+            100% {
+                border-image: linear-gradient(to bottom, #ffcc00, #ff9900);
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="menu">
-<a href="#">Home</a>
-<a href="#">Sobre</a>
-<a href="#">Serviços</a>
-<a href="#">Produtos</a>
-<a href="#">Contato</a>
-</div>
-
-<div class="banner">
-<div class="slide active">
-<img src="https://source.unsplash.com/random/800x200?nature" alt="Nature">
-</div>
-<div class="slide">
-<img src="https://source.unsplash.com/random/800x200?city" alt="City">
-</div>
-<div class="slide">
-<img src="https://source.unsplash.com/random/800x200?people" alt="People">
-</div>
-</div>
-
-<script>
-var slides = document.getElementsByClassName("slide");
-var index = 0;
-
-function showSlide(n) {
- for (var i = 0; i < slides.length; i++) {
-   slides[i].className = "slide";
- }
- slides[n].className = "slide active";
-}
-
-function nextSlide() {
- index++;
- if (index >= slides.length) {
-   index = 0;
- }
- showSlide(index);
-}
-
-setInterval(nextSlide,3000);
-</script>
-
-<div class="secao">
-<h3>Seção Um</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-</div>
-<div class="secao">
-<h3>Seção Um</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-</div>
-
-<div class="secao">
-<h3>Seção Três</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-</div>
-
-
-<div class="secao">
-<h3>Seção Um</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-</div>
-
-<div class="secao">
-<h3>Seção Dois</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-</div>
-
-<div class="secao">
-<h3>Seção Um</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem consequat consequat. Morbi vitae lacus quis nisi ullamcorper aliquet.</p>
-</div>
-
-<div class="formulario">
-<h3>Formulário de Contato</h3>
-<form action="#" method="post">
-<input type="text" name="nome" placeholder="Nome">
-<input type="email" name="email" placeholder="Email">
-<textarea name="mensagem" placeholder="Mensagem"></textarea>
-<button type="submit">Enviar</button>
-</form>
-</div>
-
-<div class="rodape">
-<p>© Todos os direitos reservados.</p>
-</div>
-
+    <div class="circle"></div>
 </body>
 </html>
